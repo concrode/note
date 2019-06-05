@@ -7,6 +7,13 @@
 ~git push origin master
 
 
+#Good blog
+https://generalthink.github.io/tags/
+
+#git tree tutorial
+https://generalthink.github.io/2019/01/09/understanding-git-data-model/
+
+
 #git untracked files/Changes to be committed
 https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
@@ -25,3 +32,11 @@ git checkout -b dev
 #push new branch to remote 
 Format:git push <remote-name> <branch-name> 
 git push origin dev
+
+
+#check log file
+git log
+
+
+#check commit status
+git cat-file commit e7d9f35ba82750fe54738082e8e8b030fe0428e2
