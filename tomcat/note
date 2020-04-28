@@ -1,0 +1,3 @@
+ls -l => check permission
+
+tomcat can't run on Mac => Go to tomcat/bin, then run chmod +x *.sh 
