@@ -1,0 +1,24 @@
+=========================================
+An important point to keep in consideration, we can use string length up to varchar(8000) only as this is the maximum number of characters that SQL varchar(n) data type can hold. So in cases when there are chances that the string length of the varchar column might exceed 8000 bytes, using varchar(8001) or anything higher will result into an error. One short example demonstrating this fact is shown below.
+
+DECLARE @name AS varchar(8001) = 'john parker d''souza';  
+SELECT @name Name
+
+The above throws error messages.
+
+=========================================
+							VARCHAR     		                                   NVARCHAR
+#Character 
+Data Type	    Variable-length, non-Unicode characters	         Variable-length, both Unicode and non-Unicode characters 																	such as Japanese, Korean, and Chinese.
+
+#Maximum Length	 Up to 8,000 characters								Up to 4,000 characters
+
+#Character Size		Takes up 1 byte per character						Takes up 2 bytes per Unicode/Non-Unicode character
+
+#Storage Size		Actual Length (in bytes)								2 times Actual Length (in bytes)
+
+
+#Usage		   Used when data length is variable or variable length                Due to storage only, 
+		   columns and if actual data is always way less than capacity		   used only if you need 																		               Unicode support such as the Japanese 																		  Kanji or Korean Hangul characters.
+
+	

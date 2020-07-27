@@ -1,0 +1,19 @@
+####
+Question:I have seen prefix N in some insert T-SQL queries. Many people have used N before inserting the value in a table.
+
+I searched, but I was not able to understand what is the purpose of including the N before inserting any strings into the table.
+
+INSERT INTO Personnel.Employees
+VALUES(N'29730', N'Philippe', N'Horsford', 20.05, 1),
+What purpose does this 'N' prefix serve, and when should it be used?
+
+==
+Answer:
+
+It's declaring the string as nvarchar data type, rather than varchar
+
+You may have seen Transact-SQL code that passes strings around using an N prefix. This denotes that the subsequent string is in Unicode (the N actually stands for National language character set). Which means that you are passing an NCHAR, NVARCHAR or NTEXT value, as opposed to CHAR, VARCHAR or TEXT.
+
+To quote from Microsoft:
+
+Prefix Unicode character string constants with the letter N. Without the N prefix, the string is converted to the default code page of the database. This default code page may not recognize certain characters.
