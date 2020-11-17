@@ -17,7 +17,10 @@ public class StreamMapDemo1 {
         System.out.println(alphaUpper);
 
         List<String> alphaUpper2 = alpha.stream().map(String::toUpperCase).collect(Collectors.toList());
+        List<String> alphaUpper3 = alpha.stream().map(s -> {s.toUpperCase().concat("r"); return s;}).collect(Collectors.toList());
+
         System.out.println(alphaUpper2);
+        System.out.println(alphaUpper3);
 
     }
 }
