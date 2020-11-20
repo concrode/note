@@ -33,6 +33,7 @@ public class SortList {
         Employee e12 = new Employee(1, 46, "m", "Pames", "Pond");
 
         List<Employee> employees = Arrays.asList(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12);
+
         /**
          * 1. All Ascend, no reversed() needed
          * 2. All Desc, add reversed() at last [This case]
@@ -43,9 +44,35 @@ public class SortList {
                 .thenComparingInt(Employee::getAge)
                 .reversed()
         );
-
         employees.forEach(System.out::println);
 
+        /**
+         * Comparator class is tagged as @FunctionalInterface
+         *
+         */
+        employees.sort(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                if (o1.getAge() == o2.getAge()) {
+                    return 0;
+                }
+
+                return o1.getAge() - o2.getAge() > 0 ? -1 : 1 ;
+            }
+        });
+        employees.forEach(System.out::println);
+
+        /**
+         * Lambda
+         */
+        employees.sort((o1, o2) -> {
+                if (o1.getAge() == o2.getAge()) {
+                    return 0;
+                }
+
+                return o1.getAge() - o2.getAge() > 0 ? -1 : 1 ;
+        });
+        employees.forEach(System.out::println);
 
     }
 

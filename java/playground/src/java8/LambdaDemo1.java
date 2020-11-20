@@ -8,8 +8,13 @@ package java8;
 
 public class LambdaDemo1 {
 
+    @FunctionalInterface
     interface Printer {
         void print(String content);
+
+        default void restart() {
+            System.out.println("System is restarting...");
+        }
     }
 
     public void printAction(String toBePrinted, Printer printer) {
@@ -39,6 +44,17 @@ public class LambdaDemo1 {
         Printer printer = val -> System.out.println("Printed=>" + val);
 
         lambdaDemo1.printAction(content, printer);
+
+        /**
+         * If Printer is tagged as @FunctionalInterface, then only methods that not be implemented needs to be
+         * implemented. Those default methods are not necessary to be implemented.
+         */
+        Printer p = new Printer() {
+            @Override
+            public void print(String content) {
+
+            }
+        };
 
     }
 
