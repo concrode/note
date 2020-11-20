@@ -4,6 +4,7 @@ import java8.model.Employee;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class MatchFind {
 
@@ -37,14 +38,25 @@ public class MatchFind {
         isExistAgeThan60 = employees.stream().anyMatch(e -> e.getAge() > 60);
         System.out.println(isExistAgeThan60);
 
-
+        // Predicate
         System.out.println(employees.stream().anyMatch(Employee.ageGreaterThan40));
 
+        // noneMatch()
+        System.out.println(employees.stream().noneMatch(e -> e.getAge() < 20));
 
 
+        // findFirst and Optional
+        Optional<Employee> employeeOptional = employees.stream().filter(e -> e.getAge() > 40).findFirst();
+        System.out.println(employeeOptional.get());
+
+        // Optional isPresent()
+        boolean isExist = employees.stream().filter(e -> e.getAge() > 90).findFirst().isPresent();
+        System.out.println(isExist);
 
 
-
+        // ifPresent
+        employees.stream().filter(e -> e.getAge() > 40).findFirst()
+                .ifPresent(e -> System.out.println("ifPresent:" + e));
 
 
 
