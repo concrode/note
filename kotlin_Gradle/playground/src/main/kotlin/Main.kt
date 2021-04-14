@@ -1,3 +1,5 @@
+import com.au.onemodule.JsonDisplay
+
 /**
  * Variable
  * Function
@@ -118,6 +120,12 @@ fun main() {
     say3("hello", *interesting) // pass array<> to vararg
     say3("hi", "sfs", "fsfs", "fsfs")
     say3()
+
+    // Import module as dependency
+    println("Module")
+    JsonDisplay.showJson("hello world")
+
+
 
 }
 
