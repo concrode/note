@@ -1,0 +1,15 @@
+shortcut in windows
+
+# alt+<- back to the last reference
+
+# F2 => jump to the next error
+
+# Alt+1 -> open project window
+
+# ESC -> jump from project window to code editor window
+
+# ctrl+E -> open most recent files
+
+# alt+7 -> show structure window
+
+# alt+F7 -> show Find Usages
