@@ -1,0 +1,5 @@
+# This command is used to access the running container
+
+docker exec -it <container id> bash 
+or
+docker exec -it <container id> sh
